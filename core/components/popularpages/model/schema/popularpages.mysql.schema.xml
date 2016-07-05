@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="popularpages" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="popularpages" version="1.1">
+        
+        <object class="popularPagesSetting" table="popularpages_setting" extends="xPDOSimpleObject">
+                <field key="id" dbtype="int" precision="10" phptype="integer" null="false" attributes="unsigned" />
+                <field key="createdon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+                <field key="deletedon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+                <field key="period" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+                <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+                <field key="is_auth" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+        </object>
+
+	<object class="popularPagesRecord" table="popularpages" extends="xPDOSimpleObject">
+                <field key="id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="" />
+                <field key="count_view" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0" />
+                <field key="user_id" dbtype="text" phptype="array" null="true" />
+                <field key="ip_anonim" dbtype="text" phptype="array" null="true" />
+
+		<index alias="id" name="id" primary="false" unique="false" type="BTREE">
+			<column key="id" length="" collation="A" null="false"/>
+		</index>
+		<index alias="count_view" name="count_view" primary="false" unique="false" type="BTREE">
+			<column key="count_view" length="" collation="A" null="false"/>
+		</index>
+                
+                <aggregate alias="Id" class="modResource" local="id" foreign="id" cardinality="one" owner="foreign"/>
+	</object>
+
+</model>

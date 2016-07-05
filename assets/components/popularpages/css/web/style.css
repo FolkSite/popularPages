@@ -1,0 +1,22 @@
+.popular-line-decor {
+    width: 100%;
+    border: 2px solid #d3a43f;
+    position: absolute;
+    bottom: 44%;
+}
+.popular-title-decor {
+    position: relative;
+    color: #771111;
+    text-align: center;
+}
+.popular-title-fon {
+    padding: 0 14px;
+    position: relative;
+    background: #fff;
+}
+.popular-wrap {
+    padding: 0 0 10px;
+    margin-bottom: 30px;
+    border-bottom: 4px solid #d3a43f;
+}
+
